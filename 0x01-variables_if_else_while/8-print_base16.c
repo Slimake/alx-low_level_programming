@@ -7,19 +7,14 @@
  */
 int main(void)
 {
-	int ch;
+	char c;
+	int d;
 
-	for (ch = '0'; ch <= '9'; ch++)
-	{
-		if (ch != '9')
-		{
-			putchar(ch);
-			putchar(',');
-		}
+	for (d = '0'; d <= '9'; d++)
+		putchar(d);
 
-		else 
-			putchar(ch);
-	}
+	for (c = 'a'; c <= 'f'; c++)
+		putchar(c);
 	putchar('\n');
 	return (0);
 }
