@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * print_alphabet - writes the alphabet characters to stdouti
@@ -12,7 +12,8 @@ void print_alphabet(void)
 
 	while (c <= 'z')
 	{
-		write(1, &c, 1);
+		_putchar(c);
 		c++;
 	}
+	_putchar('\n');
 }
