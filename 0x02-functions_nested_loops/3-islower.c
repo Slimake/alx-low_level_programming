@@ -1,18 +1,20 @@
 /**
- * _islower - Checks for lower case character
- * Return 1 (Success)
- * Return 0 (Fail)
+ * _islower - Checks for lowercase character
+ * @c: The character to check
+ *
+ * Return: On success 1.
+ *
 */
 
 int _islower(int c)
 {
-	char ch = 'a';	
+	char ch = 'a';
 
 	while (ch <= c)
 	{
 		if (ch == c)
-			return 1;
+			return (1);
 		ch++;
 	}
-	return 0;
+	return (0);
 }
