@@ -3,9 +3,7 @@
 /**
  * print_to_98 - print any nber to 98 to the stdout
  * @n: integer nber
- *
 */
-
 void print_to_98(int n)
 {
 	int stopNum = 98;
@@ -15,11 +13,8 @@ void print_to_98(int n)
 		while (n != (stopNum + 1))
 		{
 			printf("%d", n);
-
 			if (n < stopNum)
-			{
 				printf(", ");
-			}
 			n++;
 		}
 	} else if (n > stopNum)
@@ -27,11 +22,8 @@ void print_to_98(int n)
 		while (n != (stopNum - 1))
 		{
 			printf("%d", n);
-
 			if (n > stopNum)
-			{
 				printf(", ");
-			}
 			n--;
 		}
 	} else
@@ -39,14 +31,10 @@ void print_to_98(int n)
 		while (n != (stopNum + 1))
 		{
 			printf("%d", n);
-
 			if (n < stopNum)
-			{
 				printf(", ");
-			}
 			n++;
 		}
 	}
-
 	printf("\n");
 }
