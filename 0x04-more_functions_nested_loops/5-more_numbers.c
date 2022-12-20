@@ -9,21 +9,17 @@ void more_numbers(void)
 {
 	int i, j;
 	int ntimes = 10;
-	
+
 	for (i = 0; i < ntimes; i++)
 	{
-		_putchar('0');
 
-		for (j = 1; j <= 14; j++)
+		for (j = 0; j <= 14; j++)
 		{
-			if (j <= 9)
-				_putchar(j + '0');
-			else
-			{ 
-				printf("%d", j);
-			
-			}
+			if (j > 9)
+				_putchar((j / 10) + '0');
+			_putchar((j % 10) + '0');
 		}
-		printf("\n");
+
+		_putchar('\n');
 	}
 }
