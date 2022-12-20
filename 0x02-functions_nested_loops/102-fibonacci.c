@@ -6,25 +6,24 @@
  * Return: 0 (Success)
 */
 
-/* 1 2 3 5 8 13 21 34 */
-
 int main(void)
 {
-	int  next = 2;
-	int prev = 1;
-	int result = 0;
+	long next = 2;
+	long prev = 1;
+	long result = 0;
+	long fibNum = 32951280099;
 
-	printf("%d, ", prev);
-	printf("%d", next);
+	printf("%ld, ", prev);
+	printf("%ld", next);
 
-	while ((prev + next) < 50)
+	while ((prev + next) < fibNum)
 	{
 		result = prev + next;
 		prev = next;
 		next = result;
 
 		printf(", ");
-		printf("%d", result);
+		printf("%ld", result);
 	}
 	printf("\n");
 
