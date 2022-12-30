@@ -14,7 +14,6 @@ int _strlen(char *s)
 	while(*(s + count) != '\0')
 	{
 		count++;
-		printf("%d\n", count);
 	}
 
 	return count;
