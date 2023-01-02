@@ -15,5 +15,14 @@ int main(void)
 	printf("%s", s1);
 	printf("%s", ptr);
 
+	ptr = _strcpy(s1, "Holberton!");
+	printf("%s\n", s1);
+	printf("%s\n", ptr);
+
+	ptr = _strcpy(s1, "");
+	printf("%s\n", s1);
+	printf("%s\n", ptr);
+
+
 	return (0);
 }
