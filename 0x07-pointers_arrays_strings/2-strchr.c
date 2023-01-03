@@ -10,7 +10,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 
@@ -23,7 +23,7 @@ char *_strchr(char *s, char c)
 		i++;
 	}
 
-	return (0);
+	return (NULL);
 
 }
 
