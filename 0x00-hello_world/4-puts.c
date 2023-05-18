@@ -1,13 +1,13 @@
 /**
-  * main - prints a defined string to the screen
-  *
-  *	return 0
-  */
+ * main - prints a defined string to the screen
+ *
+ * Return: 0
+ */
 
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-	puts("Programming is like building a multilingual puzzle");
+	puts("Programming is like building a multilingual puzzle\n");
 	return (0);
 }
