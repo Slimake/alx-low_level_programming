@@ -1,5 +1,5 @@
 /**
- * main - a program to print base 10 number
+ * main - a program to display base 10 number
  *
  * Return: base 10 number
  */
