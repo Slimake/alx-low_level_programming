@@ -1,5 +1,5 @@
 /**
- * main - a program to print alphabet 
+ * main - a program to print alphabet
  * in lowercase and uppercase
  *
  * Return: alphabet in lowercase
@@ -24,7 +24,7 @@ int main(void)
 		putchar(A);
 		A++;
 	}
-		
+
 	putchar('\n');
-	return (0);    
+	return (0);
 }
