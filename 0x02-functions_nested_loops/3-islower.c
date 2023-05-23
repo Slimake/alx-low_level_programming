@@ -2,6 +2,7 @@
 
 /**
  * _islower - check if input is alphabet
+ * @c: paramter
  *
  * Return: (0)
  */
