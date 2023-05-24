@@ -11,12 +11,11 @@ int main(void)
 {
 	int prev = 1;
 	int cur = 2;
-	int next = 0;
-	int sum = 2;
-	int count;
+	int next = 2;
+	int sum = 0;
 	int countto = 4000000;
 
-	for (count = 0; next <= countto; count++)
+	while (next <= countto)
 	{
 		next = prev + cur;
 		prev = cur;
