@@ -11,8 +11,8 @@ int main(void)
 {
 	int prev = 1;
 	int cur = 2;
-	int next = 2;
-	int sum = 0;
+	int next = 0;
+	int sum = 2;
 	int countto = 4000000;
 
 	while (next <= countto)
