@@ -14,7 +14,6 @@ int main(void)
 	long cur = 2;
 	long next;
 
-	
 	while (i < 50)
 	{
 		if (i == 0)
