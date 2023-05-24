@@ -22,13 +22,11 @@ int main(void)
 			printf("%lu", cur);
 		else
 		{
+			result = (prev + cur);
+			prev = cur;
+			cur = result;
 			printf(", %lu", result);
 		}
-
-		result = (prev + cur);
-		prev = cur;
-		cur = result;
-
 	}
 
 	printf("\n");
