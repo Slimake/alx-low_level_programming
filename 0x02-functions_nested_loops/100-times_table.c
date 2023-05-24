@@ -11,7 +11,7 @@ void print_times_table(int n)
 {
 	int row, col, result;
 
-	if (n <= 15)
+	if (n >= 0 && n <= 15)
 	{
 		for (row = 0; row <= n; row++)
 		{
@@ -20,29 +20,32 @@ void print_times_table(int n)
 				result = row * col;
 				if (col == 0)
 					_putchar('0' + result);
-				else if (result < 10)
+				else
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('0' + result);
-				}
-				else if (result > 9 && result <= 99)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('0' + (result / 10));
-					_putchar('0' + (result % 10));
-				}
-				else if (result > 99 && result <= 999)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar('0' + ((result / 10) / 10));
-					_putchar('0' + ((result / 10) % 10));
-					_putchar('0' + (result % 10));
+					if (result < 10)
+					{
+						_putchar(',');
+						_putchar(' ');
+						_putchar(' ');
+						_putchar(' ');
+						_putchar('0' + result);
+					}
+					else if (result > 9 && result < 100)
+					{
+						_putchar(',');
+						_putchar(' ');
+						_putchar(' ');
+						_putchar('0' + (result / 10));
+						_putchar('0' + (result % 10));
+					}
+					else if (result > 99 && result < 1000)
+					{
+						_putchar(',');
+						_putchar(' ');
+						_putchar('0' + ((result / 10) / 10));
+						_putchar('0' + ((result / 10) % 10));
+						_putchar('0' + (result % 10));
+					}
 				}
 			}
 			_putchar('\n');
