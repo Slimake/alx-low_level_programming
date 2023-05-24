@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - print natural number that are multiples of 3 or 5
+ * main - display sum of multiples of 3 or 5 under 1024
  *
  * Return: Always 0.
  */
