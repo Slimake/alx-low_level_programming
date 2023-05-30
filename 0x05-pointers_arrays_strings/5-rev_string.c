@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * rev_string - reverses a string
  * @s: pointer to char
@@ -34,6 +32,4 @@ void rev_string(char *s)
 		start++;
 		end--;
 	}
-
-	_putchar('\n');
 }
