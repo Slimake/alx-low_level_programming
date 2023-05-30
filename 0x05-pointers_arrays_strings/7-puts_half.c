@@ -16,17 +16,26 @@ void puts_half(char *str)
 		str_len++;
 		i++;
 	}
-
-	n = str_len / 2;
-
-	for (; n < str_len; n++)
+	 
+	if ((str_len % 2) == 0)
 	{
-		_putchar(*(str + n));
+		n = str_len / 2;
+
+		for (; n < str_len; n++)
+		{
+			_putchar(*(str + n));
+		}
 	}
-	/*if ((str_len % 2) == 1)
+
+	if ((str_len % 2) == 1)
 	{
-		_putchar(*(str + (str_len - 1)));
-	}*/
+		n = (str_len / 2) + 2;
+
+		for (; n < str_len; n++)
+		{
+			_putchar(*(str + n));
+		}
+	}
 
 	_putchar('\n');
 }
