@@ -18,7 +18,10 @@ char *leet(char *str)
 		for (j = 0; alp[j] != '\0'; j++)
 		{
 			if (str[i] == alp[j])
+			{
 				str[i] = num[j];
+				break;
+			}
 		}
 	}
 
