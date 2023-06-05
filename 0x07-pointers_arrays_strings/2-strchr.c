@@ -1,5 +1,3 @@
-#define NULL 0
-
 /**
  * _strchr - locates a character in a string
  * @s: the memory address to print
@@ -11,14 +9,22 @@
 char *_strchr(char *s, char c)
 {
 	int i;
+	int str_len = 0;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-			return (s + i);
+		str_len++;
 		i++;
 	}
 
-	return (NULL);
+	i = 0;
+	while (i <= str_len)
+	{
+		if (s[i] == c)
+			break;
+		i++;
+	}
+
+	return (s + i);
 }
