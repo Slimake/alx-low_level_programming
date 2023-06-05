@@ -11,6 +11,7 @@ char *_strpbrk(char *s, char *accept)
 	int i;
 	int j;
 	int str_len = 0;
+	int count = 0;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -19,12 +20,16 @@ char *_strpbrk(char *s, char *accept)
 		i++;
 	}
 
-	for (i = 0; i <= str_len; i++)
+	for (i = 0; i <= str_len && count < 1; i++)
 	{
 		for (j = 0; accept[j] != '\0'; j++)
 		{
 			if (s[i] == accept[j])
-				return (s + i);
+			{
+				count++;
+				i--;
+				break;
+			}
 		}
 	}
 
