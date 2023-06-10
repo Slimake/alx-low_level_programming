@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i = 1;
 	int mul = 1;
 
-	if (argc > 1)
+	if (argc > 2)
 	{
 		while (i < argc)
 		{
