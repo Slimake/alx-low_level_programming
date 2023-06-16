@@ -13,7 +13,7 @@ int get_s2Len(char *s2, unsigned int n);
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int i;
 	unsigned int j;
 	char *str;
 
@@ -30,7 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	/* concat s1 to str */
-	for (i = 0; i < get_s1Len(s1); i++)
+	for (i = 0; s1[i] != '\0'; i++)
 		str[i] = s1[i];
 
 	/* concat s2 to str */
@@ -42,7 +42,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 
-	str[i] = '\0';
 	return (str);
 }
 
@@ -54,7 +53,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 int get_s1Len(char *s1)
 {
-	int i;
+	unsigned int i;
 	unsigned int s1_len = 0;
 
 	i = 0;
