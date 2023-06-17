@@ -14,7 +14,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *ptr;
 
 	/* check if nmemb or size is zero */
-	if (nmemb == 0 && size == 0)
+	if (nmemb <= 0 && size <= 0)
 		return (NULL);
 
 	/* allocate memory */
