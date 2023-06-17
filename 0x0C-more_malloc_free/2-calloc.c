@@ -10,6 +10,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	/* declare variable */
+	unsigned int i = 0;
 	void *ptr;
 
 	/* check if nmemb or size is zero */
@@ -22,6 +23,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	/* check if allocation was successful */
 	if (ptr == NULL)
 		return (NULL);
+
+	/* set allocatted memory value to zero */
+	for (i = 0; i < nmemb; i++)
+	{
+		*((char *)ptr + i) = 0;
+	}
 
 	return (ptr);
 }
