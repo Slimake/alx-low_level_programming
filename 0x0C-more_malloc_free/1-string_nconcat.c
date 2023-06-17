@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 int get_s1Len(char *s1);
-unsigned int get_s2Len(char *s2, unsigned int n);
+int get_s2Len(char *s2, unsigned int n);
 
 /**
  * string_nconcat - concatenates two strings
@@ -13,8 +13,8 @@ unsigned int get_s2Len(char *s2, unsigned int n);
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
-	unsigned int j;
+	int i;
+	int j;
 	char *str;
 
 	if (s1 == NULL)
@@ -53,8 +53,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 int get_s1Len(char *s1)
 {
-	unsigned int i;
-	unsigned int s1_len = 0;
+	int i;
+	int s1_len = 0;
 
 	i = 0;
 	while (s1[i] != '\0')
@@ -73,10 +73,10 @@ int get_s1Len(char *s1)
  * Return: the length of the memory address
  */
 
-unsigned int get_s2Len(char *s2, unsigned int n)
+int get_s2Len(char *s2, unsigned int n)
 {
 	unsigned int i;
-	unsigned int s2_len = 0;
+	int s2_len = 0;
 
 	i = 0;
 	while (i < n && s2[i] != '\0')
