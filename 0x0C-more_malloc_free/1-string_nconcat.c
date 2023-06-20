@@ -1,7 +1,6 @@
 #include <stdlib.h>
 
-int get_s1Len(char *s1);
-int get_s2Len(char *s2, unsigned int n);
+int get_len(char *s);
 
 /**
  * string_nconcat - concatenates two strings
@@ -15,15 +14,25 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int i;
 	int j;
+	int num;
+	int width;
 	char *str;
 
+	num = n;
+	
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
+	if (num >= get_len(s2))
+		num = get_len(s2);
+
+	/* length of both s1 and s2 */
+	width = get_len(s1) + num + 1;
+
 	/* allocate memory */
-	str = malloc(sizeof(char) * get_s1Len(s1) * get_s2Len(s2, n));
+	str = malloc(sizeof(char) * width);
 
 	/* check if memory allocation was successful */
 	if (str == NULL)
@@ -35,55 +44,33 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	/* concat s2 to str */
 	j = 0;
-	while (j < get_s2Len(s2, n))
+	while (j < num)
 	{
 		str[i + j] = s2[j];
 		j++;
 	}
 
+	/* add the null byte to the end of the string */
 	str[i + j] = '\0';
 	return (str);
 }
 
 /**
- * get_s1Len - get the length of s1
- * @s1: the memory address
+ * get_len - get the length of the string
+ * @s: the memory address
  * Return: the length of the memory address
  */
 
-int get_s1Len(char *s1)
+int get_len(char *s)
 {
 	int i;
-	int s1_len = 0;
 
 	i = 0;
-	while (s1[i] != '\0')
+	while (s[i] != '\0')
 	{
-		s1_len++;
 		i++;
 	}
 
-	return (s1_len);
+	return (i);
 }
 
-/**
- * get_s2Len - get the length of s2
- * @s2: the memory address
- * @n: the number of bytes
- * Return: the length of the memory address
- */
-
-int get_s2Len(char *s2, unsigned int n)
-{
-	unsigned int i;
-	int s2_len = 0;
-
-	i = 0;
-	while (i < n && s2[i] != '\0')
-	{
-		s2_len++;
-		i++;
-	}
-
-	return (s2_len);
-}
