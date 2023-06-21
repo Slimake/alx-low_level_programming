@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 
@@ -9,9 +10,11 @@
 void free_dog(dog_t *d)
 {
 	if (d == NULL)
-		return (0);
-
-	free(d->name);
-	free(d->owner);
-	free(d);
+		printf("0\n");
+	else
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 }
