@@ -10,7 +10,7 @@
 void free_dog(dog_t *d)
 {
 	if (d == NULL)
-		printf("0\n");
+		printf("%d\n", 0);
 	else
 	{
 		free(d->name);
