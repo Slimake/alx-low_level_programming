@@ -31,9 +31,8 @@ list_t *add_node(list_t **head, const char *str)
 	current->str = s;
 	current->len = count;
 	current->next = *head;
+
 	*head = current;
 
-	free(current);
-	free(s);
 	return (*head);
 }
