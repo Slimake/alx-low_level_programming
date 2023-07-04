@@ -22,9 +22,16 @@ list_t *add_node(list_t **head, const char *str)
 	s = strdup(str);
 	current = malloc(sizeof(list_t));
 
-	if (current == NULL)
+	if (s == NULL)
+	{
+		free(s);
 		return (NULL);
-
+	}
+	if (current == NULL)
+	{
+		free(current);
+		return (NULL);
+	}
 	for (i = 0; s[i] != '\0'; i++)
 		count++;
 
