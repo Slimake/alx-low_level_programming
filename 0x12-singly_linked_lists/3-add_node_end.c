@@ -13,36 +13,54 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int i;
-	unsigned int count;
-	char *s = strdup(str);
+	char *s;
 	list_t *ptr = NULL;
 	list_t *current = NULL;
 
-	count = 0;
+	if (str == NULL)
+		return (NULL);
+
+	s = strdup(str);
+	if (s == NULL)
+		return (NULL);
+
 	current = malloc(sizeof(list_t));
 
 	if (current == NULL)
 		return (NULL);
 
-	if (*head == NULL)
-		*head = malloc(sizeof(list_t));
-
-	for (i = 0; s[i] != '\0'; i++)
-		count++;
-
 	current->str = s;
-	current->len = count;
+	current->len = _strlen(s);
 	current->next = NULL;
 
-	ptr = *head;
-
-	while (ptr->next != NULL)
+	if (*head == NULL)
+		*head = current;
+	else
 	{
-		ptr = ptr->next;
+		ptr = *head;
+
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+
+		ptr->next = current;
 	}
 
-	ptr->next = current;
-
 	return (*head);
+}
+
+/**
+ * _strlen - print the length of a string
+ * @str: a string
+ *
+ * Return: length of string
+ */
+
+int _strlen(char *str)
+{
+	unsigned int len = 0;
+
+	while (str[len] != '\0')
+		len++;
+
+	return (len);
 }
