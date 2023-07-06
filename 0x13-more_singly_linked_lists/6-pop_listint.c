@@ -13,6 +13,9 @@ int pop_listint(listint_t **head)
 	int n;
 	listint_t *temp;
 
+	if (*head == NULL)
+		return (0);
+
 	/* assign the first node to temp */
 	/* set head to the second node on the list */
 	temp = *head;
