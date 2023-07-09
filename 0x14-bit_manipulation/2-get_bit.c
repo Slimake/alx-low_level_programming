@@ -14,7 +14,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int limit;
 
 	/* set limit to 32 (maximum size of an int 2^32) */
-	limit = sizeof((unsigned int) *8);
+	limit = (sizeof(unsigned long int) * 8);
 
 	/* check to see if index is not > limit(2^32) */
 	if (index > limit)
