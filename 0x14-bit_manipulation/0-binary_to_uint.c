@@ -11,29 +11,30 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int i;
-	unsigned int decimal;
-	unsigned int n;
-	unsigned int digit;
+	int len = 0, i;
+	unsigned int decimal = 0;
 
 	if (b == NULL)
-		return (0);
+		return (decimal);
 
-	decimal = 0;
-	n = 0;
-
-	for (i = 0; b[i] != '\0'; i++)
+	/* find the length of the string */
+	i = 0;
+	while (*(b + i) != '\0')
 	{
-		if ((b[i] != '0') && (b[i] != '1'))
-			return (0);
-		n = n * 10 + b[i] - '0';
+		len++;
+		i++;
 	}
+	len--;
 
-	for (i = 0; n != 0; i++)
+	i = 0;
+	while (*(b + i) != '\0')
 	{
-		digit = n % 10;
-		decimal += digit << i;
-		n = n / 10;
+		if ((*(b + i) != '0') && (*(b + i) != '1'))
+			return (0);
+		if (*(b + i) == '1')
+			decimal += (1 << len);
+		len--;
+		i++;
 	}
 
 	return (decimal);
