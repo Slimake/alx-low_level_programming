@@ -9,7 +9,7 @@
 void print_binary(unsigned long int n)
 {
 	int len = 0;
-	int copy = n;
+	unsigned long int copy = n;
 
 	if (n == 0)
 		_putchar('0');
