@@ -10,9 +10,19 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int bit;
+	int bit;
+	unsigned int limit;
 
-	bit = ((n >> index) % 2);
+	/* set limit to 32 (maximum size of an int 2^32) */
+	limit = sizeof((unsigned int) *8);
+
+	/* check to see if index is not > limit(2^32) */
+	if (index > limit)
+		return (-1);
+
+	/* right shift binary equivalent of n by index */
+	/* and perform bitwise AND with 1 in binary */
+	bit = ((n >> index) & 1);
 
 	return (bit);
 }
