@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define STDIN_FILENO 0
+#define STDOUT_FILENO 1
+#define STDERROR_FILENO 2
+
 #ifndef MAIN_H
 #define MAIN_H
 
