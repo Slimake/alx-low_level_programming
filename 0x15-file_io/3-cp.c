@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERROR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERROR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -44,15 +44,23 @@ int main(int argc, char **argv)
 	if (fd_to == -1)
 	{
 		dprintf(STDERROR_FILENO, "Error: Can't close fd %d", fd_to);
-		exit(100);
+		exit(98);
 	}
 
 	bytes_write = write(fd_to, buffer, nbytes);	/* write to file to */
 	/* check if the return is not an error */
 	check_error(buffer, fd_to, bytes_write, argv, STDERROR_FILENO);
 
-	close(fd_from);
-	close(fd_to);
+	if (close(fd_from) != -1)
+		close(fd_from);
+	else
+		exit(100);
+
+	if (close(fd_to) != -1)
+		close(fd_to);
+	else
+		exit(100);
+
 	return (0);
 }
 
