@@ -10,28 +10,38 @@
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	if (head != NULL)
+	/* Declare a new node pointer variable */
+	dlistint_t *new;
+
+	if (head == NULL)
+		return (NULL);
+
+	/* Set memory address for the new node */
+	new = malloc(sizeof(dlistint_t));
+
+	/* Check if allocation is success */
+	if (new == NULL)
 	{
-		/* Declare a new node pointer variable */
-		dlistint_t *new;
+		return (NULL);
+	}
 
-		/* Set memory address for the new node */
-		new = malloc(sizeof(dlistint_t));
-		/* Check if allocation is success */
-		if (new == NULL)
-		{
-			return (NULL);
-		}
-
-		/* Populate the element of the new node */
-		new->n = n;
-		new->prev = NULL;
-		new->next = *head;
-
-		/* Set head to point to the new node */
+	/* Check if head is NULL */
+	if (*head == NULL)
+	{
 		*head = new;
+		new->prev = NULL;
+		new->next = NULL;
 		return (*head);
 	}
-	else
-		return (NULL);
+
+	/* Populate the element of the new node */
+	new->n = n;
+	new->prev = NULL;
+	new->next = *head;
+
+	(*head)->prev = new;
+
+	/* Set head to point to the new node */
+	*head = new;
+	return (*head);
 }
