@@ -2,14 +2,15 @@
 
 /**
  * dlistint_len - returns the number of elements in a linked list
- * @h - the linked list
- * 
+ * @h: the linked list
+ *
  * Return: the number of elements.
  */
 
 size_t dlistint_len(const dlistint_t *h)
 {
 	size_t count = 0;
+
 	if (h != NULL)
 	{
 		count = 1;
@@ -18,8 +19,8 @@ size_t dlistint_len(const dlistint_t *h)
 			count += 1;
 			h = h->next;
 		}
-		return count;
+		return (count);
 	}
 
-	return count;
+	return (count);
 }
