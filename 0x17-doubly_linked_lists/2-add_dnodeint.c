@@ -21,9 +21,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	/* Check if allocation is success */
 	if (new == NULL)
-	{
 		return (NULL);
-	}
 
 	/* Check if head is NULL */
 	if (*head == NULL)
@@ -31,7 +29,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		*head = new;
 		new->prev = NULL;
 		new->next = NULL;
-		return (*head);
+		return (new);
 	}
 
 	/* Populate the element of the new node */
@@ -43,5 +41,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	/* Set head to point to the new node */
 	*head = new;
-	return (*head);
+	return (new);
 }
