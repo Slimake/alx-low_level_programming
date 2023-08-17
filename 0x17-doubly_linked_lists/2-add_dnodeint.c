@@ -17,11 +17,12 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		return (NULL);
 
 	/* Set memory address for the new node */
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(struct dlistint_s));
 
 	/* Check if allocation is success */
 	if (new == NULL)
 		return (NULL);
+	new->n = n;
 
 	/* Check if head is NULL */
 	if (*head == NULL)
@@ -29,11 +30,10 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		*head = new;
 		new->prev = NULL;
 		new->next = NULL;
-		return (new);
+		return (*head);
 	}
 
 	/* Populate the element of the new node */
-	new->n = n;
 	new->prev = NULL;
 	new->next = *head;
 
@@ -41,5 +41,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	/* Set head to point to the new node */
 	*head = new;
-	return (new);
+	return (*head);
 }
