@@ -13,7 +13,7 @@ size_t print_dlistint(const dlistint_t *h)
 
     /* Check if h is NULL */
 	if (h == NULL)
-		return (EXIT_FAILURE);
+		return (0);
 
 	/* Cycle through as long as h is not NULL */
 	while (h != NULL)
