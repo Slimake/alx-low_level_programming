@@ -10,54 +10,41 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	int size = 0;
+	unsigned int i = 0;
+	dlistint_t *current = *h;
 	dlistint_t *newNode = NULL;
-	dlistint_t *node = *h;
-	dlistint_t *temp = *h;
-	dlistint_t *temp2 = *h;
 
+	/* Check if h is NULL */
+	if (h == NULL)
+		return (NULL);
+
+	/* Check if *h is NULL */
+	if (*h == NULL)
+		return (NULL);
+
+	/* Allocate memory on the heap to newNode */
 	newNode = malloc(sizeof(dlistint_t));
+	/* Return NULL is memory allocation was not successful */
 	if (newNode == NULL)
 		return (NULL);
 
-	while (node != NULL)
-	{
-		node = node->next;
-		size++;
-	}
-	if (idx == 0)
-	{
-		newNode->n = n;
-		newNode->next = *h;
-		newNode->prev = NULL;
-		if (*h != NULL)
-			(*h)->prev = newNode;
-		*h = newNode;
-	}
-	else if ((int)idx == size)
-	{
-		newNode->n = n;
-		newNode->next = NULL;
+	/* set newNode data to n */
+	newNode->n = n;
 
-		if (*h == NULL)
-		{
-			*h = newNode;
-			newNode->prev = NULL;
-		}
-		while (temp->next != NULL)
-			temp->next = newNode;
-		newNode->prev = temp;
-	}
-	else
+	/* Cycle through until a node before idx position */
+	while (i < (idx - 1))
 	{
-		newNode->n = n;
-		newNode->next = NULL;
-		while (--idx)
-			temp = temp->next;
-		newNode->next = temp->next;
-		newNode->prev = temp;
-		temp->next = newNode;
-		temp2->prev = newNode;
+		current = current->next;
+		i++;
 	}
+
+	/* set newNode->next to current->next and newNode->prev to current */
+	newNode->next = current->next;
+	newNode->prev = current;
+
+	/* set current->next to newNode and newNode->next->prev to newNode */
+	current->next = newNode;
+	newNode->next->prev = newNode;
+
 	return (*h);
 }
