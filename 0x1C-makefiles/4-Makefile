@@ -1,0 +1,26 @@
+# USAGE: make [all, clean, oclean, fclean] -f filename
+
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = ${SRC:.c=.o}
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Builds the executable
+all: m.h ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+
+# Deletes all temp files and executable
+clean:
+	${RM} *~ ${NAME}
+
+# Deletes the object files
+oclean:
+	${RM} ${OBJ}
+
+# Deletes all temp file, executable and object files
+fclean: clean oclean
+
+# Forces recompilation of all source files
+re: oclean all
