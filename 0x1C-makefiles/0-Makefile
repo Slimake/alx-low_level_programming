@@ -1,6 +1,4 @@
 .PHONY = all
 
-CC = gcc
-
 all:
-	${CC} $(wildcard *.c) -o school
+	gcc $(wildcard *.c) -o school
