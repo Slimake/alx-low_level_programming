@@ -1,4 +1,2 @@
-all: generate
-
-generate:
-	gcc $(wildcard *.c) -o school
+all:
+	@echo gcc  $(wildcard *.c) -o school
