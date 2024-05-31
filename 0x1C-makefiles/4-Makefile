@@ -1,7 +1,7 @@
 # USAGE: make [all, clean, oclean, fclean] -f filename
 
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = ${SRC:.c=.o}
 NAME = school
 RM = rm -f
